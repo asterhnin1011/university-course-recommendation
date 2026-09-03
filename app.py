@@ -2,12 +2,20 @@ from flask import Flask, render_template, request
 
 from services.course_service import (
     load_students,
-    get_recommendations
+    get_recommendations_with_ai
 )
 
 
+# ============================================================
+# FLASK APPLICATION
+# ============================================================
+
 app = Flask(__name__)
 
+
+# ============================================================
+# HOME PAGE
+# ============================================================
 
 @app.route("/")
 def index():
@@ -20,24 +28,58 @@ def index():
     )
 
 
+# ============================================================
+# COURSE RECOMMENDATION
+# ============================================================
+
 @app.route("/recommend", methods=["POST"])
 def recommend():
 
+    # --------------------------------------------------------
+    # Get student ID from the form
+    # --------------------------------------------------------
+
     student_id = request.form.get("student_id")
 
-    recommendations = get_recommendations(
+    # --------------------------------------------------------
+    # Generate recommendations + Bedrock explanation
+    # --------------------------------------------------------
+
+    result = get_recommendations_with_ai(
         student_id,
         top_n=5
     )
 
-    if recommendations is None:
+    # --------------------------------------------------------
+    # Student not found
+    # --------------------------------------------------------
+
+    if result is None:
         return "Student not found", 404
+
+    # --------------------------------------------------------
+    # Extract results
+    # --------------------------------------------------------
+
+    recommendations = result["recommendations"]
+    explanation = result["explanation"]
+    student = result["student"]
+
+    # --------------------------------------------------------
+    # Display results
+    # --------------------------------------------------------
 
     return render_template(
         "recommendations.html",
-        recommendations=recommendations
+        recommendations=recommendations,
+        explanation=explanation,
+        student=student
     )
 
+
+# ============================================================
+# RUN APPLICATION
+# ============================================================
 
 if __name__ == "__main__":
 
