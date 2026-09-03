@@ -4,7 +4,7 @@ from botocore.exceptions import ClientError
 
 REGION = "us-east-1"
 
-MODEL_ID = "amazon.nova-2-lite-v1:0"
+MODEL_ID = "anthropic.claude-3-haiku-20240307-v1:0"
 
 
 bedrock = boto3.client(
