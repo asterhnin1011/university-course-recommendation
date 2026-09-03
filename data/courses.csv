@@ -1,0 +1,11 @@
+course_id,course_name,major,interest,skills,difficulty
+C001,Machine Learning,Computer Science,Artificial Intelligence,"Python,Statistics",Advanced
+C002,Cloud Computing,Computer Science,Cloud Computing,"Linux,Networking",Intermediate
+C003,Database Systems,Computer Science,Database,"SQL,Database",Intermediate
+C004,Web Development,Computer Science,Web Development,"HTML,CSS,JavaScript",Intermediate
+C005,Data Science,Computer Science,Data Science,"Python,Statistics",Advanced
+C006,Cyber Security,Information Technology,Cyber Security,"Networking,Linux",Advanced
+C007,Computer Networks,Information Technology,Networking,"Networking,Linux",Intermediate
+C008,Software Engineering,Computer Science,Software Development,"Programming,Git",Intermediate
+C009,Artificial Intelligence,Computer Science,Artificial Intelligence,"Python,Mathematics",Advanced
+C010,Information Systems,Information Technology,Information Systems,"Database,Management",Beginner

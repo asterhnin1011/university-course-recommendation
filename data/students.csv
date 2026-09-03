@@ -1,0 +1,6 @@
+student_id,name,major,gpa,interests,skills
+S001,Aung Aung,Computer Science,3.6,"Artificial Intelligence,Cloud Computing","Python,Linux"
+S002,Su Su,Computer Science,3.2,"Database,Web Development","SQL,HTML,CSS"
+S003,Kyaw Kyaw,Information Technology,3.8,"Cyber Security,Networking","Linux,Networking"
+S004,Mya Mya,Computer Science,3.9,"Data Science,Artificial Intelligence","Python,Statistics"
+S005,Htet Htet,Information Technology,3.4,"Cloud Computing,Networking","Linux,Networking"

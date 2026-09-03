@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Course Recommendations</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Recommended Courses</h1>
+
+    <p>
+        Courses are ranked according to the
+        student's profile.
+    </p>
+
+    {% for course in recommendations %}
+
+    <div class="course-card">
+
+        <h2>
+            {{ loop.index }}.
+            {{ course.course_name }}
+        </h2>
+
+        <p>
+            <strong>Recommendation Score:</strong>
+            {{ course.score }}%
+        </p>
+
+        <p>
+            <strong>Major:</strong>
+            {{ course.major }}
+        </p>
+
+        <p>
+            <strong>Interest:</strong>
+            {{ course.interest }}
+        </p>
+
+        <p>
+            <strong>Required Skills:</strong>
+            {{ course.skills }}
+        </p>
+
+        <p>
+            <strong>Difficulty:</strong>
+            {{ course.difficulty }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+    <a href="/">
+        ← Back to Student Selection
+    </a>
+
+</div>
+
+</body>
+
+</html>
